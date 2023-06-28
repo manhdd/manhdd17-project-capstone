@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: manhdd17-capstone
+  labels:
+    app: manhdd17-capstone
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: manhdd17-capstone
+  template:
+    metadata:
+      labels:
+        app: manhdd17-capstone
+    spec:
+      containers:
+        - name: manhdd17-capstone
+          image: docker.io/manhsech/manhdd17-capstone:latest
+          imagePullPolicy: Always
+          ports:
+            - name: app
+              containerPort: 80

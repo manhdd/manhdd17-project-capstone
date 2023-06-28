@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: manhdd17-capstone-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      targetPort: 80
+      name: manhdd17-capstone
+      protocol: TCP
+  selector:
+    app: manhdd17-capstone
